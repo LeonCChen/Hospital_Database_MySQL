@@ -8,9 +8,12 @@
   - Finalize Both Designs
 
 * **Week 2 (Mar 7 - Mar 14):**
-  - Get Familiarize Ourselves With MySQL
-  - Create Database
+  - Familiarize Ourselves With MySQL
+  - Create Database (Rough Draft)
   - Discuss Populating Database
+  
+  - Issue 1 Establishing Super and Sub Type relationship
+  - Issue 2 EERD and ERD Needs some refinement 
 
 * **Week 3 (Mar 14 - Mar 21)**
   -
