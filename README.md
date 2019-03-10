@@ -26,7 +26,7 @@
 
 ## Responsibilities
 
-* Zach Rosa,
+* Zack Rosa,
 * Leon Chen,
 * Brendan Dou, 
 
