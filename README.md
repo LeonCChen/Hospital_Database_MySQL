@@ -26,11 +26,5 @@
 * Leon Chen
 * Brendan Dou
 
-## Responsibilities
-
-* Zack Rosa,
-* Leon Chen,
-* Brendan Dou, 
-
 # Comments
 1. 
