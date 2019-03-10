@@ -11,7 +11,6 @@
   - Familiarize Ourselves With MySQL
   - Create Database (Rough Draft)
   - Discuss Populating Database
-  
   - Issue 1 Establishing Super and Sub Type relationship
   - Issue 2 EERD and ERD Needs some refinement 
 
