@@ -20,14 +20,14 @@
 
 ## Team members
 
-* Zach 
+* Zack Rosa 
 * Leon Chen
 * Brendan Dou
 
 ## Responsibilities
 
-* Zach,
-* Leon,
+* Zach Rosa,
+* Leon Chen,
 * Brendan Dou, 
 
 # Comments
