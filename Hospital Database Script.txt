@@ -1,5 +1,5 @@
 # Script to Create Hospital Database
-# Version 1.0.0
+# Version 1.1.0
 # Creating Date 02/10/2019
 # Last Updated On 02/10/2019	
 
@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS WORKER;
 DROP TABLE IF EXISTS DEPARTMENT;
 
 CREATE TABLE DEPARTMENT (
-		Department_ID		TINYINT NOT NULL,
+		Department_ID			TINYINT NOT NULL,
 		Workers 			SMALLINT,
-		Building_Location	VARCHAR(10),
+		Building_Location		VARCHAR(10),
 	
 	CONSTRAINT Department_PK PRIMARY KEY (Department_Number)
 );
@@ -35,7 +35,7 @@ CREATE TABLE DEPARTMENT (
 CREATE TABLE WORKER (
 		Worker_ID 			SMALLINT NOT NULL,
 		Name 				VARCHAR(20),
-		Phone_Number 		INT,
+		Phone_Number 			INT,
 		Gender 				VARCHAR(5),
 		Salary 				INT,
 		
@@ -46,8 +46,8 @@ CREATE TABLE WORKER (
 CREATE TABLE DOCTOR (
 		Doctor_ID			SMALLINT NOT NULL, ******************************************************
 		Experience			TINYINT,
-		Qualification		VARCHAR(30),
-		Department_ID		TINYINT,
+		Qualification			VARCHAR(30),
+		Department_ID			TINYINT,
 		D_Worker_ID			SMALLINT,
 		
 	CONSTRAINT Doctor_PK PRIMARY KEY (Doctor_ID),
@@ -69,7 +69,7 @@ CREATE TABLE STAFF (
 CREATE TABLE CAFETERIA_STAFF {
 		Staff_ID 			SMALLINT NOT NULL,
 		Position			VARCHAR(15),
-		Cafeteria_ID		SMALLINT,
+		Cafeteria_ID			SMALLINT,
 		
 	CONSTRAINT CAFETERIA_STAFF_PK PRIMARY KEY (Staff_ID),
 	CONSTRAINT CAFETERIA_STAFF_FK1 FOREIGN KEY (Staff_ID) REFERENCES STAFF(Staff_ID)
@@ -77,7 +77,7 @@ CREATE TABLE CAFETERIA_STAFF {
 
 
 CREATE TABLE CAFETERIA (
-		Cafeteria_ID		SMALLINT NOT NULL, *********************************************************
+		Cafeteria_ID			SMALLINT NOT NULL, *********************************************************
 		Food_Type			VARCHAR(15),
 		Seating				SMALLINT,
 		
@@ -89,8 +89,8 @@ CREATE TABLE BILL (
 		Bill_ID				INT NOT NULL,
 		Tests				VARCHAR(30),
 		Treatment			VARCHAR(30),
-		Time_Admitted		DATETIME,
-		Prescription		VARCHAR(30),
+		Time_Admitted			DATETIME,
+		Prescription			VARCHAR(30),
 		
 	CONSTRAINT BILL_PK PRIMARY KEY (Bill_ID)
 );
@@ -98,13 +98,13 @@ CREATE TABLE BILL (
 
 CREATE TABLE PATIENT (
 		Patient_ID			INT NOT NULL,	
-		Contact_Number		VARCHAR(10)
+		Contact_Number			VARCHAR(10)
 		Name				VARCHAR(20),
 		Address				TEXT,
 		Gender				VARCHAR(5),
-		Age					SMALLINT,
+		Age				SMALLINT,
 		Blood_Type			VARCHAR(5)
-		Cafeteria_ID		SMALLINT,
+		Cafeteria_ID			SMALLINT,
 		Bill_ID				INT,
 		
 	CONSTRAINT PATIENT_PK PRIMARY KEY (Patient_ID),
@@ -114,7 +114,7 @@ CREATE TABLE PATIENT (
 
 
 CREATE TABLE MEDICTION_PRESCRIBED (
-		Prescription_ID		INT NOT NULL,
+		Prescription_ID			INT NOT NULL,
 		Medication_ID			VARCHAR(25),
 		Patient_ID			INT,
 		
@@ -124,9 +124,9 @@ CREATE TABLE MEDICTION_PRESCRIBED (
 
 
 CREATE TABLE MEDICTION (
-		Medication_ID		INT NOT NULL,
+		Medication_ID			INT NOT NULL,
 		Doses				TINYINT,
-		Expiration_Date		DATE,
+		Expiration_Date			DATE,
 		Doctor_ID			SMALLINT,
 		
 	CONSTRAINT MEDICTION_PK PRIMARY KEY (Medication_ID),
@@ -162,12 +162,12 @@ CREATE TABLE TESTS (
 
 
 CREATE TABLE DOCTOR_PATIENT (
-		Doctor_ID
-		Patient_ID
-		Time
+		Doctor_ID			SMALLINT NOT NULL,
+		Patient_ID			INT,
+		Time				DATETIME,
 		
 	CONSTRAINT DOCTOR_PATIENT_PK PRIMARY KEY (Doctor_ID),
 	CONSTRAINT DOCTOR_PATIENT_FK1 FOREIGN KEY (Doctor_ID) REFERENCES DOCTOR(Doctor_ID),
-	CONSTRAINT DOCTOR_PATIENT_FK2 FOREIGN KEY (Patient_ID) REFERENCES PATIENT(Patient_ID),
+	CONSTRAINT DOCTOR_PATIENT_FK2 FOREIGN KEY (Patient_ID) REFERENCES PATIENT(Patient_ID)
 );
 
