@@ -15,10 +15,13 @@
   - Issue 2 EERD and ERD Needs some refinement 
 
 * **Week 3 (Mar 14 - Mar 21)**
-  -
+  - Finalize Database
+  - Populate Database
+  - Start Practicing Queries
+  - Determine how to Present Project 
 
 * **Week 4 (Mar 21 - Mar 28)**
-  -
+  - 
 
 ## Team members
 
