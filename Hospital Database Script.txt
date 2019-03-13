@@ -27,7 +27,6 @@ CREATE TABLE DEPARTMENT (
 		Department_ID			TINYINT NOT NULL,
 		Workers 			SMALLINT,
 		Building_Location		VARCHAR(10),
-	
 	CONSTRAINT Department_PK PRIMARY KEY (Department_ID)
 );
 
@@ -38,7 +37,6 @@ CREATE TABLE WORKER (
 		Phone_Number 			TEXT,
 		Gender 				VARCHAR(5),
 		Salary 				INT,
-		
 	CONSTRAINT Worker_PK PRIMARY KEY (Worker_ID)
 );
 
@@ -49,11 +47,10 @@ CREATE TABLE DOCTOR (
 		Degree				VARCHAR(30),
 		Department_ID			TINYINT,
 		D_Worker_ID			SMALLINT,
-		
 	CONSTRAINT Doctor_PK PRIMARY KEY (Doctor_ID),
 	CONSTRAINT Doctor_FK1 FOREIGN KEY (Department_ID) REFERENCES DEPARTMENT(Department_ID),
 	CONSTRAINT Doctor_FK2 FOREIGN KEY (D_Worker_ID) REFERENCES WORKER(Worker_ID)
-	#Needs some Edits **********************************************************************
+	#Needs some Edits *
 );
 
 # Check
@@ -64,7 +61,7 @@ CREATE TABLE STAFF (
 		
 	CONSTRAINT STAFF_PK PRIMARY KEY (Staff_ID),
 	CONSTRAINT STAFF_FK1 FOREIGN KEY (S_Worker_ID) REFERENCES Worker (Worker_ID)
-	#Needs some Edits **********************************************************************
+	#Needs some Edits *
 );
 
 # Checked
@@ -171,4 +168,3 @@ CREATE TABLE DOCTOR_PATIENT (
 	CONSTRAINT DOCTOR_PATIENT_FK1 FOREIGN KEY (Doctor_ID) REFERENCES DOCTOR(Doctor_ID),
 	CONSTRAINT DOCTOR_PATIENT_FK2 FOREIGN KEY (Patient_ID) REFERENCES PATIENT(Patient_ID)
 );
-
