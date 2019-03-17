@@ -35,8 +35,8 @@ CREATE TABLE WORKER (
 		Worker_ID 			SMALLINT NOT NULL,
 		fname 				VARCHAR(10),
 		lname 				VARCHAR(10),
-		telephone 			VARCHAR(14),
 		Gender 				CHAR(1),
+		telephone 			VARCHAR(14),
 		Salary 				INT,
 	CONSTRAINT Worker_PK PRIMARY KEY (Worker_ID)
 );
@@ -98,10 +98,10 @@ CREATE TABLE BILL (
 # Checked
 CREATE TABLE PATIENT (
 		Patient_ID			INT NOT NULL,	
-		telephone			VARCHAR(14),
 		fname				VARCHAR(10),
 		lname 				VARCHAR(10),
 		Address				TEXT,
+		telephone			VARCHAR(14),
 		Gender				VARCHAR(5),
 		Age				SMALLINT,
 		Blood_Type			VARCHAR(5),
@@ -150,8 +150,8 @@ CREATE TABLE DIAGNOSIS (
 CREATE TABLE TESTS (
 		Test_ID				INT NOT NUll,
 		Result				TINYINT(1),
-		Doctor_ID			SMALLINT NOT NULL,
 		Illness				VARCHAR(15),
+		Doctor_ID			SMALLINT NOT NULL,
 		Patient_ID			INT NOT NULL,
 		
 	CONSTRAINT TESTS_PK PRIMARY KEY (Test_ID),
