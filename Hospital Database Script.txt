@@ -1,9 +1,10 @@
 # Script to Create Hospital Database
 # Version 2.0.1
 # Creating Date 02/10/2019
-# Last Updated On 02/12/2019	
+# Last Updated On 03/19/2019	
 
 # Has Gone Through Testing
+# Added values to each database
 # Not Final Draft Of Script
 # How to Establish Super/Sub Data (Still Remain)
 # Runs Just Copy All And Run on MySQL
@@ -24,15 +25,15 @@ DROP TABLE IF EXISTS DEPARTMENT;
 
 # Checked 
 CREATE TABLE DEPARTMENT (
-		Department_ID			TINYINT NOT NULL,
-		Workers 			SMALLINT,
-		Building_Location		VARCHAR(10),
+		Department_ID			varchar(15) NOT NULL,
+		Workers 			INT,
+		Building_Location		VARCHAR(15),
 	CONSTRAINT Department_PK PRIMARY KEY (Department_ID)
 );
 
 # Checked
 CREATE TABLE WORKER (
-		Worker_ID 			SMALLINT NOT NULL,
+		Worker_ID 			INT NOT NULL,
 		fname 				VARCHAR(10),
 		lname 				VARCHAR(10),
 		Gender 				CHAR(1),
@@ -43,11 +44,11 @@ CREATE TABLE WORKER (
 
 # Checked
 CREATE TABLE DOCTOR (
-		Doctor_ID			SMALLINT NOT NULL, 
+		Doctor_ID			INT NOT NULL, 
 		Field				VARCHAR(20),
 		Degree				VARCHAR(30),
-		Department_ID			TINYINT NOT NULL,
-		D_Worker_ID			SMALLINT NOT NULL,
+		Department_ID			varchar(15) NOT NULL,
+		D_Worker_ID			INT NOT NULL,
 	CONSTRAINT Doctor_PK PRIMARY KEY (Doctor_ID),
 	CONSTRAINT Doctor_FK1 FOREIGN KEY (Department_ID) REFERENCES DEPARTMENT(Department_ID),
 	CONSTRAINT Doctor_FK2 FOREIGN KEY (D_Worker_ID) REFERENCES WORKER(Worker_ID)
@@ -56,9 +57,9 @@ CREATE TABLE DOCTOR (
 
 # Check
 CREATE TABLE STAFF (
-		Staff_ID			SMALLINT NOT NULL, 
+		Staff_ID			INT NOT NULL, 
 		Job_Title			VARCHAR(15),
-		S_Worker_ID			SMALLINT,
+		S_Worker_ID			INT,
 		
 	CONSTRAINT STAFF_PK PRIMARY KEY (Staff_ID),
 	CONSTRAINT STAFF_FK1 FOREIGN KEY (S_Worker_ID) REFERENCES Worker (Worker_ID)
@@ -67,7 +68,7 @@ CREATE TABLE STAFF (
 
 # Checked
 CREATE TABLE CAFETERIA (
-		Cafeteria_ID			SMALLINT NOT NULL, 
+		Cafeteria_ID			varchar(10) NOT NULL, 
 		Food_Type			VARCHAR(15),
 		Seating				SMALLINT,
 		
@@ -76,8 +77,8 @@ CREATE TABLE CAFETERIA (
 
 # Checked
 CREATE TABLE CAFETERIA_STAFF (
-		Staff_ID 			SMALLINT NOT NULL,
-		Cafeteria_ID			SMALLINT NOT NULL,
+		Staff_ID 			INT NOT NULL,
+		Cafeteria_ID			varchar(10) NOT NULL,
 		Position			VARCHAR(15),
 		
 	CONSTRAINT CAFETERIA_STAFF_FK1 FOREIGN KEY (Staff_ID) REFERENCES STAFF (Staff_ID),
@@ -89,7 +90,7 @@ CREATE TABLE BILL (
 		Bill_ID				INT NOT NULL,
 		Tests				VARCHAR(15),
 		Treatment			VARCHAR(20),
-		Time_Admitted			DATETIME,
+		Time_Admitted			DATE,
 		Prescription			VARCHAR(20),
 		
 	CONSTRAINT BILL_PK PRIMARY KEY (Bill_ID)
@@ -103,9 +104,9 @@ CREATE TABLE PATIENT (
 		Address				TEXT,
 		telephone			VARCHAR(14),
 		Gender				VARCHAR(5),
-		Age				SMALLINT,
+		Age				INT,
 		Blood_Type			VARCHAR(5),
-		Cafeteria_ID			SMALLINT NOT NULL,
+		Cafeteria_ID			varchar(10) NOT NULL,
 		Bill_ID				INT NOT NULL,
 		
 	CONSTRAINT PATIENT_PK PRIMARY KEY (Patient_ID),
@@ -116,8 +117,8 @@ CREATE TABLE PATIENT (
 
 # Checked
 CREATE TABLE MEDICATION (
-		Medication_ID			INT NOT NULL,
-		Doses				TINYINT,
+		Medication_ID			varchar(15) NOT NULL,
+		Doses				INT,
 		Expiration_Date			DATE,
 		
 	CONSTRAINT MEDICATION_PK PRIMARY KEY (Medication_ID)
@@ -127,18 +128,18 @@ CREATE TABLE MEDICATION (
 # Checked
 CREATE TABLE MEDICATION_PRESCRIBED (
 		Prescription_ID			INT NOT NULL,
-		Medication_ID			INT NOT NULL,
+		Medication_ID			Varchar(15) NOT NULL,
 		Patient_ID			INT NOT NULL,
 		
-	CONSTRAINT MEDICTION_PERSCRIBED_PK PRIMARY KEY (Prescription_ID),
-	CONSTRAINT MEDICTION_PERSCRIBED_FK1 FOREIGN KEY (Medication_ID) REFERENCES MEDICATION (Medication_ID),
-	CONSTRAINT MEDICTION_PERSCRIBED_FK2 FOREIGN KEY (Patient_ID) REFERENCES PATIENT (Patient_ID)
+	CONSTRAINT MEDICATION_PERSCRIBED_PK PRIMARY KEY (Prescription_ID),
+	CONSTRAINT MEDICATION_PERSCRIBED_FK1 FOREIGN KEY (Medication_ID) REFERENCES MEDICATION (Medication_ID),
+	CONSTRAINT MEDICATION_PERSCRIBED_FK2 FOREIGN KEY (Patient_ID) REFERENCES PATIENT (Patient_ID)
 );
 
 # Checked
 CREATE TABLE DIAGNOSIS (
-		Illness				VARCHAR(15) NOT NUll,
-		Doctor_ID			SMALLINT NOT NULL,
+		Illness				VARCHAR(20) NOT NUll,
+		Doctor_ID			INT NOT NULL,
 		Patient_ID			INT NOT NULL,
 		
 	CONSTRAINT DIAGNOSIS_PK PRIMARY KEY (Illness),
@@ -150,8 +151,8 @@ CREATE TABLE DIAGNOSIS (
 CREATE TABLE TESTS (
 		Test_ID				INT NOT NUll,
 		Result				TINYINT(1),
-		Illness				VARCHAR(15),
-		Doctor_ID			SMALLINT NOT NULL,
+		Illness				VARCHAR(20),
+		Doctor_ID			INT NOT NULL,
 		Patient_ID			INT NOT NULL,
 		
 	CONSTRAINT TESTS_PK PRIMARY KEY (Test_ID),
@@ -162,11 +163,81 @@ CREATE TABLE TESTS (
 
 # Checked
 CREATE TABLE DOCTOR_PATIENT (
-		Doctor_ID			SMALLINT NOT NULL,
+		Doctor_ID			INT NOT NULL,
 		Patient_ID			INT NOT NULL,
-		Time				DATETIME,
+		Time				DATE,
 		
 	CONSTRAINT DOCTOR_PATIENT_PK PRIMARY KEY (Doctor_ID),
 	CONSTRAINT DOCTOR_PATIENT_FK1 FOREIGN KEY (Doctor_ID) REFERENCES DOCTOR(Doctor_ID),
 	CONSTRAINT DOCTOR_PATIENT_FK2 FOREIGN KEY (Patient_ID) REFERENCES PATIENT(Patient_ID)
 );
+
+INSERT INTO Department VALUES (' ICU ', ' 20 ', ' Dobson ');
+INSERT INTO Department VALUES (' Pediatric  ', ' 26 ', ' Wheeler ');
+INSERT INTO Department VALUES (' ER ', ' 32 ', ' Dobson ');
+INSERT INTO Department VALUES (' Burn Center ', ' 15 ', ' Campbell ');
+INSERT INTO Department VALUES (' Pharmacy ', ' 8 ', ' Wheeler ');
+
+INSERT INTO Worker VALUES (' 119275 ', ' Henry ', ' Fuller ', ' M ', ' (978)123-1234 ', ' 127000 ');
+INSERT INTO Worker VALUES (' 122842 ', ' Zack ', ' Futa ', ' M ', ' (123)436-1236 ', ' 122000 ');
+INSERT INTO Worker VALUES (' 197531 ', ' Cam ', ' Ryder ', ' M ', ' (543)753-1327 ', ' 72000 ');
+INSERT INTO Worker VALUES (' 128575 ', ' Janet ', ' Grosmen ', ' F ', ' (617)355-7684 ', ' 150000 ');
+INSERT INTO Worker VALUES (' 124865 ', ' Michelle ', ' Haverhill ', ' F ', ' (631)125-1235 ', ' 125000 ');
+INSERT INTO Worker VALUES (' 118467 ', ' Oliver ', ' Mansman ', ' M ', ' (934)126-6421 ', ' 49000 ');
+INSERT INTO Worker VALUES (' 195538 ', ' Lisa ', ' Perez ', ' F ', ' (682)165-8523 ', ' 64000 ');
+INSERT INTO Worker VALUES (' 123456 ', ' Tilda ', ' White ', ' F ', ' (723)983-8521 ', ' 100000 ');
+INSERT INTO Worker VALUES (' 124642 ', ' Patrick ', ' McGuiyver ', ' M ', ' (213)753-7234 ', ' 180000 ');
+INSERT INTO Worker VALUES (' 105293 ', ' Wilson ', ' Wilson ', ' M ', ' (734)357-9853 ', ' 52000 ');
+
+INSERT INTO Doctor VALUES (' 12365 ', '  ', ' PHD ', ' ICU ', '124642');
+INSERT INTO Doctor VALUES (' 15235 ', '  ', ' MD ', ' Pediatric ', '128575');
+INSERT INTO Doctor VALUES (' 51235 ', '  ', ' PHD ', ' ER ', '123456');
+INSERT INTO Doctor VALUES (' 67891 ', '  ', ' MD ', ' Pharmacy ', '119275');
+INSERT INTO Doctor VALUES (' 14263 ', '  ', ' PHD ', ' Burn Center ', '124865');
+INSERT INTO Doctor VALUES (' 15642 ', '  ', ' PHD ', ' ER ', '122842');
+
+INSERT INTO Staff VALUES (' 0012 ', ' Cafeteria Staff ', ' 197531 ');
+INSERT INTO Staff VALUES (' 1632 ', ' Janitor ', ' 118467 ');
+INSERT INTO Staff VALUES (' 1834 ', ' Cafeteria Staff ', ' 195538 ');
+INSERT INTO Staff VALUES (' 1462 ', ' Janitor ', ' 105293 ');
+
+INSERT INTO Cafeteria VALUES (' Wheeler ', ' Mash Potatoes ', ' 150 ');
+INSERT INTO Cafeteria VALUES (' Dobson ', ' Lunchables ', ' 200 ');
+INSERT INTO Cafeteria VALUES (' Campbell ', ' Mash Potatoes ', ' 90 ');
+
+INSERT INTO Cafeteria_Staff VALUES (' 0012 ', ' Dobson ', ' Cook ');
+INSERT INTO Cafeteria_Staff VALUES (' 1834 ', ' Campbell ', ' Server ');
+
+INSERT INTO Bill VALUES (' 1423 ', ' MRI ', ' Lumbar puncture ', ' 2019-02-11 ','Null');
+INSERT INTO Bill VALUES (' 1537 ', ' Blood test ', ' Chemotherapy ', ' 2019-02-09 ','Carboplatin');
+INSERT INTO Bill VALUES (' 1632 ', ' Blood test ', ' Null ', ' 2019-02-16 ','Insulin');
+INSERT INTO Bill VALUES (' 1744 ', ' EKG ', ' Null ', ' 2019-02-22 ','Thrombolytics');
+
+INSERT INTO Patient VALUES (' 589215 ', ' Mike ', ' Lock ', ' 152 Main St ', ' (135)753-2346 ', ' M ', ' 41 ', ' A+ ', ' Dobson ', ' 1537 ');
+INSERT INTO Patient VALUES (' 975913 ', ' Harry ', ' Sax ', ' 53 Chendogg Ave ', ' (643)764-1256 ', ' M ', ' 21 ', ' O- ', ' Campbell ', ' 1632 ');
+INSERT INTO Patient VALUES (' 193258 ', ' Jenny ', ' Tayla ', ' 651 Nowhre St ', ' (642)176-7421 ', ' F ', ' 19 ', ' AB+ ', ' Dobson ', ' 1423 ');
+INSERT INTO Patient VALUES (' 497598 ', ' Ben ', ' Dover ', ' 63 Vancouver Way ', ' (432)753-1274 ', ' M ', ' 72 ', ' B- ', ' Wheeler ', ' 1744 ');
+
+INSERT INTO Medication VALUES (' Carboplatin ', ' 40 ', ' 2019-05-30 ');
+INSERT INTO Medication VALUES (' Insulin ', ' 10 ', ' 2020-02-02 ');
+INSERT INTO Medication VALUES (' Thrombolytics ', ' 80 ', ' 2019-03-22 ');
+
+INSERT INTO Medication_Prescribed VALUES (' 416420 ', ' Carboplatin ', ' 589215');
+INSERT INTO Medication_Prescribed VALUES (' 109214 ', ' Insulin ', ' 975913');
+INSERT INTO Medication_Prescribed VALUES (' 201592 ', ' Thrombolytics ', ' 497598');
+
+INSERT INTO Diagnosis VALUES (' Multiple Sclerosis ', ' 12365 ', ' 193258 ');
+INSERT INTO Diagnosis VALUES (' Skin Cancer ', ' 15642 ', ' 589215 ');
+INSERT INTO Diagnosis VALUES (' Diabetes ', ' 15235 ', ' 975913 ');
+INSERT INTO Diagnosis VALUES (' Heart Attack ', ' 51235 ', ' 497598 ');
+
+INSERT INTO Tests VALUES (' 4512 ', ' 1 ', ' Multiple Sclerosis ', ' 12365 ', ' 193258 ');
+INSERT INTO Tests VALUES (' 5123 ', ' 1 ', ' Skin Cancer ', ' 15642 ', ' 589215 ');
+INSERT INTO Tests VALUES (' 7231 ', ' 1 ', ' Diabetes ', ' 15235 ', ' 975913 ');
+INSERT INTO Tests VALUES (' 1631 ', ' 1 ', ' Heart Attack ', ' 51235 ', ' 497598 ');
+
+INSERT INTO Doctor_Patient VALUES (' 12365 ', ' 193258 ', ' 2019-11-02 ');
+INSERT INTO Doctor_Patient VALUES (' 15642 ', ' 589215 ', ' 2019-09-02 ');
+INSERT INTO Doctor_Patient VALUES (' 15235 ', ' 975913 ', ' 2019-02-16 ');
+INSERT INTO Doctor_Patient VALUES (' 51235 ', ' 497598 ', ' 2019-02-22 ');
+
