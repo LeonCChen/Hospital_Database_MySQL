@@ -216,7 +216,7 @@ INSERT INTO Bill VALUES (' 1744 ', ' EKG ', ' Null ', ' 2019-02-22 ','Thrombolyt
 INSERT INTO Patient VALUES (' 589215 ', ' Mike ', ' Lock ', ' 152 Main St ', ' (135)753-2346 ', ' M ', ' 41 ', ' A+ ', ' Dobson ', ' 1537 ');
 INSERT INTO Patient VALUES (' 975913 ', ' Harry ', ' Sax ', ' 53 Chendogg Ave ', ' (643)764-1256 ', ' M ', ' 21 ', ' O- ', ' Campbell ', ' 1632 ');
 INSERT INTO Patient VALUES (' 193258 ', ' Jenny ', ' Tayla ', ' 651 Nowhre St ', ' (642)176-7421 ', ' F ', ' 19 ', ' AB+ ', ' Dobson ', ' 1423 ');
-INSERT INTO Patient VALUES (' 497598 ', ' Ben ', ' Dover ', ' 63 Vancouver Way ', ' (432)753-1274 ', ' M ', ' 72 ', ' B- ', ' Wheeler ', ' 1744 ');
+INSERT INTO Patient VALUES (' 497598 ', ' Benjamin ', ' Dover ', ' 63 Vancouver Way ', ' (432)753-1274 ', ' M ', ' 72 ', ' B- ', ' Wheeler ', ' 1744 ');
 
 INSERT INTO Medication VALUES (' Carboplatin ', ' 40 ', ' 2019-05-30 ');
 INSERT INTO Medication VALUES (' Insulin ', ' 10 ', ' 2020-02-02 ');
