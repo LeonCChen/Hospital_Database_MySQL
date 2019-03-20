@@ -2,12 +2,12 @@
 
 ## Plan
 
-* **Week 1 & 2 (Feb 21 - Mar 7):**
+* **Week 1 & 2 (Feb 21 - Mar 7)**
   - Design ERD Diagram
   - Design EERD Diagram
   - Finalize Both Designs
 
-* **Week 3 (Mar 7 - Mar 14):**
+* **Week 3 (Mar 7 - Mar 14)**
   - Familiarize Ourselves With MySQL
   - Create Database (Rough Draft)
   - Discuss Populating Database
