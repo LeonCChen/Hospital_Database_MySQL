@@ -178,16 +178,16 @@ INSERT INTO Department VALUES (' ER ', ' 32 ', ' Dobson ');
 INSERT INTO Department VALUES (' Burn Center ', ' 15 ', ' Campbell ');
 INSERT INTO Department VALUES (' Pharmacy ', ' 8 ', ' Wheeler ');
 
-INSERT INTO Worker VALUES (' 119275 ', ' Henry ', ' Fuller ', ' M ', ' (978)123-1234 ', ' 127000 ');
-INSERT INTO Worker VALUES (' 122842 ', ' Zack ', ' Futa ', ' M ', ' (123)436-1236 ', ' 122000 ');
-INSERT INTO Worker VALUES (' 197531 ', ' Cam ', ' Ryder ', ' M ', ' (543)753-1327 ', ' 72000 ');
-INSERT INTO Worker VALUES (' 128575 ', ' Janet ', ' Grosmen ', ' F ', ' (617)355-7684 ', ' 150000 ');
-INSERT INTO Worker VALUES (' 124865 ', ' Michelle ', ' Haverhill ', ' F ', ' (631)125-1235 ', ' 125000 ');
-INSERT INTO Worker VALUES (' 118467 ', ' Oliver ', ' Mansman ', ' M ', ' (934)126-6421 ', ' 49000 ');
-INSERT INTO Worker VALUES (' 195538 ', ' Lisa ', ' Perez ', ' F ', ' (682)165-8523 ', ' 64000 ');
-INSERT INTO Worker VALUES (' 123456 ', ' Tilda ', ' White ', ' F ', ' (723)983-8521 ', ' 100000 ');
-INSERT INTO Worker VALUES (' 124642 ', ' Patrick ', ' McGuiyver ', ' M ', ' (213)753-7234 ', ' 180000 ');
-INSERT INTO Worker VALUES (' 105293 ', ' Wilson ', ' Wilson ', ' M ', ' (734)357-9853 ', ' 52000 ');
+INSERT INTO Worker VALUES (' 119275 ', ' Henry ', ' Fuller ', 'M', ' (978)123-1234 ', ' 127000 ');
+INSERT INTO Worker VALUES (' 122842 ', ' Zack ', ' Futa ', 'M', ' (123)436-1236 ', ' 122000 ');
+INSERT INTO Worker VALUES (' 197531 ', ' Cam ', ' Ryder ', 'M', ' (543)753-1327 ', ' 72000 ');
+INSERT INTO Worker VALUES (' 128575 ', ' Janet ', ' Grosmen ', 'F', ' (617)355-7684 ', ' 150000 ');
+INSERT INTO Worker VALUES (' 124865 ', ' Michelle ', ' Haverhill ', 'F', ' (631)125-1235 ', ' 125000 ');
+INSERT INTO Worker VALUES (' 118467 ', ' Oliver ', ' Mansman ', 'M', ' (934)126-6421 ', ' 49000 ');
+INSERT INTO Worker VALUES (' 195538 ', ' Lisa ', ' Perez ', 'F', ' (682)165-8523 ', ' 64000 ');
+INSERT INTO Worker VALUES (' 123456 ', ' Tilda ', ' White ', 'F', ' (723)983-8521 ', ' 100000 ');
+INSERT INTO Worker VALUES (' 124642 ', ' Patrick ', ' McGuiyver ', 'M', ' (213)753-7234 ', ' 180000 ');
+INSERT INTO Worker VALUES (' 105293 ', ' Wilson ', ' Wilson ', 'M', ' (734)357-9853 ', ' 52000 ');
 
 INSERT INTO Doctor VALUES (' 12365 ', '  ', ' PHD ', ' ICU ', '124642');
 INSERT INTO Doctor VALUES (' 15235 ', '  ', ' MD ', ' Pediatric ', '128575');
@@ -196,7 +196,7 @@ INSERT INTO Doctor VALUES (' 67891 ', '  ', ' MD ', ' Pharmacy ', '119275');
 INSERT INTO Doctor VALUES (' 14263 ', '  ', ' PHD ', ' Burn Center ', '124865');
 INSERT INTO Doctor VALUES (' 15642 ', '  ', ' PHD ', ' ER ', '122842');
 
-INSERT INTO Staff VALUES (' 0012 ', ' Cafeteria Staff ', ' 197531 ');
+INSERT INTO Staff VALUES (' 0012 ', ' Cafeteria Staff ', ' 19753		1 ');
 INSERT INTO Staff VALUES (' 1632 ', ' Janitor ', ' 118467 ');
 INSERT INTO Staff VALUES (' 1834 ', ' Cafeteria Staff ', ' 195538 ');
 INSERT INTO Staff VALUES (' 1462 ', ' Janitor ', ' 105293 ');
