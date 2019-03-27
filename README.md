@@ -26,6 +26,7 @@
   - Practice Presentation
   - Finalize Database Creation/Population
   - Keep Practicing Queries 
+  - Issue 1 Extra Spacing with Values Causes Issues
 
 ## Team members
 
