@@ -36,4 +36,5 @@
 
 # Comments
 1. Presentation Date : 03/27/19 (Wednesday)
-2. Due Date:
+2. Due Date: April 5th (Friday)
+3. Required Pieces: Proposal, ERD, Relational Model(EERD), DDL(Table Creation), DML(Inserted Value), PowerPoint 
