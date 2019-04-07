@@ -5,9 +5,8 @@
 
 # Has Gone Through Testing
 # Added values to each database
-# Not Final Draft Of Script
-# How to Establish Super/Sub Data (Still Remain)
-# Runs Just Copy All And Run on MySQL
+# Final Draft Of Script
+# Runs, Copy All And Run on MySQL
 
 DROP TABLE IF EXISTS DOCTOR_PATIENT;
 DROP TABLE IF EXISTS TESTS;
